@@ -2,7 +2,7 @@
 // Unauthorized copying of this file, via any medium is strictly prohibited
 
 using UnityEditor;
-using UnityEditor.Experimental.SceneManagement;
+
 using UnityEditor.ShortcutManagement;
 using UnityEngine;
 
@@ -138,7 +138,7 @@ namespace LEGOModelImporter
         static Rect ClampRectToSceneView(Rect rect)
         {
             var distanceFromTop = DistanceFromBorders;
-            if(PrefabStageUtility.GetCurrentPrefabStage() != null)
+            if(UnityEditor.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage() != null)
             {
                 distanceFromTop += DistanceFromBorders + SceneViewTopBarHeight;
             }

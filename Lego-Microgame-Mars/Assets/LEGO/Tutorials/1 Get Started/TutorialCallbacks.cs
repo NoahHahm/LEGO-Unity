@@ -2,8 +2,8 @@ using Unity.LEGO.Minifig;
 using UnityEngine;
 using LEGOModelImporter;
 using Unity.LEGO.Behaviours.Triggers;
+using Unity.Tutorials.Core.Editor;
 using UnityEditor;
-using Unity.InteractiveTutorials;
 
 namespace Unity.LEGO.Tutorials
 {
@@ -124,8 +124,8 @@ namespace Unity.LEGO.Tutorials
         /// <param name="futureObjectReference"></param>
         public void SelectGameObject(FutureObjectReference futureObjectReference)
         {
-            if (futureObjectReference.sceneObjectReference == null) { return; }
-            Selection.activeObject = futureObjectReference.sceneObjectReference.ReferencedObjectAsGameObject;
+            if (futureObjectReference.SceneObjectReference == null) { return; }
+            Selection.activeObject = futureObjectReference.SceneObjectReference.ReferencedObjectAsGameObject;
         }
 
         public void LoadPlaygroundScene()

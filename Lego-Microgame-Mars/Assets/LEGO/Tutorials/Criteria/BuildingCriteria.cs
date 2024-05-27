@@ -4,8 +4,8 @@ using Unity.LEGO.Behaviours.Actions;
 using System.Linq;
 using LEGOModelImporter;
 using Unity.LEGO.Behaviours.Triggers;
-using Unity.InteractiveTutorials;
 using Unity.LEGO.EditorExt;
+using Unity.Tutorials.Core.Editor;
 
 namespace Unity.LEGO.Tutorials
 {
@@ -23,11 +23,11 @@ namespace Unity.LEGO.Tutorials
         public FutureObjectReference futureGaloInstance = default;
         public FutureObjectReference futureAltarInstance = default;
         public FutureObjectReference futureExplodeInstance = default;
-        GameObject ElevatorBrickInstance { get { return futureElevatorBrickInstance.sceneObjectReference.ReferencedObjectAsGameObject; } }
-        GameObject ElevatorTouchTriggerInstance { get { return futureElevatorTouchTriggerInstance.sceneObjectReference.ReferencedObjectAsGameObject; } }
-        GameObject GaloInstance { get { return futureGaloInstance.sceneObjectReference.ReferencedObjectAsGameObject; } }
-        GameObject AltarInstance { get { return futureAltarInstance.sceneObjectReference.ReferencedObjectAsGameObject; } }
-        GameObject ExplodeInstance { get { return futureExplodeInstance.sceneObjectReference.ReferencedObjectAsGameObject; } }
+        GameObject ElevatorBrickInstance { get { return futureElevatorBrickInstance.SceneObjectReference.ReferencedObjectAsGameObject; } }
+        GameObject ElevatorTouchTriggerInstance { get { return futureElevatorTouchTriggerInstance.SceneObjectReference.ReferencedObjectAsGameObject; } }
+        GameObject GaloInstance { get { return futureGaloInstance.SceneObjectReference.ReferencedObjectAsGameObject; } }
+        GameObject AltarInstance { get { return futureAltarInstance.SceneObjectReference.ReferencedObjectAsGameObject; } }
+        GameObject ExplodeInstance { get { return futureExplodeInstance.SceneObjectReference.ReferencedObjectAsGameObject; } }
         TouchTrigger touchTriggerConnectedToAltar;
 
         public bool IsBrickBuildingEnabled()

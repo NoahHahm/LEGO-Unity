@@ -3,8 +3,9 @@ using Unity.LEGO.Behaviours.Actions;
 using System.Linq;
 using Unity.LEGO.Behaviours.Triggers;
 using System.Collections.Generic;
-using Unity.InteractiveTutorials;
 using LEGOModelImporter;
+using Unity.Tutorials.Core;
+using Unity.Tutorials.Core.Editor;
 using UnityEditor;
 
 namespace Unity.LEGO.Tutorials
@@ -90,15 +91,15 @@ namespace Unity.LEGO.Tutorials
 
 
             ObjectReference referenceToBrick = new ObjectReference();
-            referenceToBrick.sceneObjectReference = new SceneObjectReference();
-            referenceToBrick.sceneObjectReference.Update(TouchTrigger.gameObject);
+            referenceToBrick.SceneObjectReference = new SceneObjectReference();
+            referenceToBrick.SceneObjectReference.Update(TouchTrigger.gameObject);
 
-            var criteria = tutorialPage.paragraphs[2].criteria;
+            var criteria = tutorialPage.Paragraphs[2].Criteria;
             foreach (var criterion in criteria)
             {
-                if (criterion.criterion as RequiredSelectionCriterion)
+                if (criterion.Criterion as RequiredSelectionCriterion)
                 {
-                    (criterion.criterion as RequiredSelectionCriterion).SetObjectReferences(new List<ObjectReference>() { referenceToBrick });
+                    (criterion.Criterion as RequiredSelectionCriterion).SetObjectReferences(new List<ObjectReference>() { referenceToBrick });
                     EditorUtility.SetDirty(tutorialPage);
                     AssetDatabase.SaveAssets();
                     break;
@@ -143,7 +144,7 @@ namespace Unity.LEGO.Tutorials
 
             // The original TouchTrigger is referenced by the previous tutorial steps so it has a
             // SceneObjectGuid for it and we need to get rid duplicate GUID for the the clone.
-            var sceneObjGuid = triggerCopy.GetComponent<SceneObjectGUIDComponent>();
+            var sceneObjGuid = triggerCopy.GetComponent<SceneObjectGuid>();
             if (sceneObjGuid != null)
                 DestroyImmediate(sceneObjGuid);
             triggerCopy.transform.localPosition = touchTriggerTransform.localPosition;
